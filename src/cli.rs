@@ -29,7 +29,7 @@ pub enum Standard {
 
 #[derive(Debug, Parser)]
 #[command(
-    name = "Clyx",
+    name = "clyx",
     version,
     about = "A small, batteries-included CMake project manager"
 )]
@@ -54,7 +54,7 @@ pub enum Command {
     Clean(CleanArgs),
     /// List source files and project metadata.
     List(ListArgs),
-    /// Check that Forge's required tools are available.
+    /// Check that Clyx's required tools are available.
     Doctor,
 }
 

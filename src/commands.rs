@@ -211,7 +211,7 @@ fn list(args: ListArgs) -> Result<()> {
 }
 
 fn doctor() -> Result<()> {
-    println!("Forge {}", env!("CARGO_PKG_VERSION").bold());
+    println!("Clyx {}", env!("CARGO_PKG_VERSION").bold());
     for tool in ["cmake", "cargo", "ninja", "git", "c++"] {
         if process::exists(tool) {
             println!("{} {}", "✓".green(), tool);

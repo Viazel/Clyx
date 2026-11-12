@@ -1,6 +1,6 @@
-# Forge
+# Clyx
 
-Forge is a small, cross-platform Rust CLI for creating and managing modern
+Clyx is a small, cross-platform Rust CLI for creating and managing modern
 C and C++ projects built with CMake. Generated projects use target-based CMake
 and keep source files, build artifacts, and configuration separate.
 
@@ -10,40 +10,40 @@ and keep source files, build artifacts, and configuration separate.
 - Non-destructive `new` and `init` commands, optional tests and Git initialization.
 - CMake configuration/build/run/clean commands with Debug/Release, generator,
   compiler, and parallel-job options.
-- Tool diagnostics through `Clyx doctor` and a portable `--no-color` mode.
+- Tool diagnostics through `clyx doctor` and a portable `--no-color` mode.
 
 ## Installation and prerequisites
 
-Install Forge locally with Cargo from a cloned checkout:
+Install Clyx locally with Cargo from a cloned checkout:
 
 ```sh
-git clone https://github.com/your-org/forge.git
-cd forge
+git clone https://github.com/Viazel/clyx.git
+cd clyx
 cargo install --path .
 ```
 
-The installed `Clyx` executable is then available from Cargo's binary
+The installed `clyx` executable is then available from Cargo's binary
 directory (usually `~/.cargo/bin`):
 
 ```sh
-Clyx --version
+clyx --version
 ```
 
-Forge itself needs a stable Rust toolchain. Generated projects need CMake 3.16+
+Clyx itself needs a stable Rust toolchain. Generated projects need CMake 3.16+
 and a C or C++ compiler. Ninja and Git are optional unless selected explicitly.
 
 ## Quick start
 
 ```sh
-Clyx new hello --language cpp --standard c++20 --tests --git
+clyx new hello --language cpp --standard c++20 --tests --git
 cd hello
-Clyx build --debug --jobs 8
-Clyx run
-Clyx build --release
-Clyx clean --all
+clyx build --debug --jobs 8
+clyx run
+clyx build --release
+clyx clean --all
 ```
 
-Use `Clyx init` in an existing directory. It never replaces existing source
+Use `clyx init` in an existing directory. It never replaces existing source
 files or `CMakeLists.txt`; `--force` only permits writing missing project
 scaffolding in a non-empty directory.
 
@@ -59,11 +59,11 @@ scaffolding in a non-empty directory.
 | `list` | Show project metadata and available templates |
 | `doctor` | Check CMake, compilers, Ninja, and Git |
 
-Run `Clyx --help` or `Clyx COMMAND --help` for complete option details.
+Run `clyx --help` or `clyx COMMAND --help` for complete option details.
 
 ## Configuration
 
-Each project has an optional `forge.toml`:
+Each project has an optional `clyx.toml`:
 
 ```toml
 [defaults]
@@ -80,11 +80,11 @@ color = true
 ```
 
 Command-line options override project settings. Configuration is not required
-for CMake projects created outside Forge.
+for CMake projects created outside Clyx.
 
 ## Generated layout
 
-An executable contains `CMakeLists.txt`, `forge.toml`, `README.md`-compatible
+An executable contains `CMakeLists.txt`, `clyx.toml`, a generated `README.md`,
 source layout (`src/`, optional `tests/`, and `include/`), and a `.gitignore`.
 Libraries use `add_library`; header-only libraries use an `INTERFACE` target
 and install-ready include paths.

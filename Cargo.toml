@@ -1,16 +1,16 @@
 [package]
 name = "clyx"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "A modern Rust-powered CLI to easily create, configure, and build C/C++ projects with CMake."
 license = "MIT"
-repository = "https://github.com/Viazel/Clyx"
+repository = "https://github.com/Viazel/clyx"
 readme = "README.md"
 keywords = ["cli", "tool", "cinit", "c", "cpp"]
 categories = ["command-line-utilities"]
 
 [[bin]]
-name = "Clyx"
+name = "clyx"
 path = "src/main.rs"
 
 [dependencies]
