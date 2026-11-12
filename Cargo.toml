@@ -2,6 +2,12 @@
 name = "forge"
 version = "0.1.0"
 edition = "2024"
+description = "A modern Rust-powered CLI to easily create, configure, and build C/C++ projects with CMake."
+license = "MIT"
+repository = "https://github.com/Viazel/forge"
+readme = "README.md"
+keywords = ["cli", "tool", "cinit", "c", "cpp"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 anyhow = "1"
