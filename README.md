@@ -10,7 +10,7 @@ and keep source files, build artifacts, and configuration separate.
 - Non-destructive `new` and `init` commands, optional tests and Git initialization.
 - CMake configuration/build/run/clean commands with Debug/Release, generator,
   compiler, and parallel-job options.
-- Tool diagnostics through `cforge doctor` and a portable `--no-color` mode.
+- Tool diagnostics through `Clyx doctor` and a portable `--no-color` mode.
 
 ## Installation and prerequisites
 
@@ -22,11 +22,11 @@ cd forge
 cargo install --path .
 ```
 
-The installed `cforge` executable is then available from Cargo's binary
+The installed `Clyx` executable is then available from Cargo's binary
 directory (usually `~/.cargo/bin`):
 
 ```sh
-cforge --version
+Clyx --version
 ```
 
 Forge itself needs a stable Rust toolchain. Generated projects need CMake 3.16+
@@ -35,15 +35,15 @@ and a C or C++ compiler. Ninja and Git are optional unless selected explicitly.
 ## Quick start
 
 ```sh
-cforge new hello --language cpp --standard c++20 --tests --git
+Clyx new hello --language cpp --standard c++20 --tests --git
 cd hello
-cforge build --debug --jobs 8
-cforge run
-cforge build --release
-cforge clean --all
+Clyx build --debug --jobs 8
+Clyx run
+Clyx build --release
+Clyx clean --all
 ```
 
-Use `cforge init` in an existing directory. It never replaces existing source
+Use `Clyx init` in an existing directory. It never replaces existing source
 files or `CMakeLists.txt`; `--force` only permits writing missing project
 scaffolding in a non-empty directory.
 
@@ -59,7 +59,7 @@ scaffolding in a non-empty directory.
 | `list` | Show project metadata and available templates |
 | `doctor` | Check CMake, compilers, Ninja, and Git |
 
-Run `cforge --help` or `cforge COMMAND --help` for complete option details.
+Run `Clyx --help` or `Clyx COMMAND --help` for complete option details.
 
 ## Configuration
 

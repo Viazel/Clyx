@@ -29,7 +29,7 @@ pub enum Standard {
 
 #[derive(Debug, Parser)]
 #[command(
-    name = "cforge",
+    name = "Clyx",
     version,
     about = "A small, batteries-included CMake project manager"
 )]
