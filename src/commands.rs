@@ -33,7 +33,7 @@ fn new(args: NewArgs) -> Result<()> {
         .file_name()
         .and_then(|n| n.to_str())
         .filter(|n| !n.is_empty())
-        .unwrap_or("forge-project")
+        .unwrap_or("cforge-project")
         .to_owned();
     templates::validate_name(&name)?;
     let mut cfg = ProjectConfig::new(name, args.language);
@@ -55,7 +55,7 @@ fn init(args: InitArgs) -> Result<()> {
     let name = root
         .file_name()
         .and_then(|n| n.to_str())
-        .unwrap_or("forge-project")
+        .unwrap_or("cforge-project")
         .to_owned();
     let config = if root.join(CONFIG_FILE).exists() {
         ProjectConfig::load(&root)?

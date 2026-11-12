@@ -6,7 +6,7 @@ use tempfile::tempdir;
 fn new_creates_requested_template_and_preserves_files() {
     let dir = tempdir().expect("tempdir");
     let project = dir.path().join("demo");
-    Command::cargo_bin("forge")
+    Command::cargo_bin("cforge")
         .expect("binary")
         .args([
             "--no-color",
@@ -23,7 +23,7 @@ fn new_creates_requested_template_and_preserves_files() {
         .stdout(predicate::str::contains("Created"));
     let source = project.join("src/main.cpp");
     std::fs::write(&source, "custom").expect("write custom source");
-    Command::cargo_bin("forge")
+    Command::cargo_bin("cforge")
         .expect("binary")
         .args(["new", project.to_str().expect("path"), "--force"])
         .assert()
@@ -37,7 +37,7 @@ fn new_creates_requested_template_and_preserves_files() {
 #[test]
 fn invalid_name_is_rejected() {
     let dir = tempdir().expect("tempdir");
-    Command::cargo_bin("forge")
+    Command::cargo_bin("cforge")
         .expect("binary")
         .args(["new", dir.path().join("bad.name").to_str().expect("path")])
         .assert()
